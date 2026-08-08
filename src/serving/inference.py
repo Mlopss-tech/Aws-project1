@@ -55,15 +55,36 @@ except Exception as e:
             raise Exception("No model found in local mlruns")
     except Exception as fallback_error:
         raise Exception(f"Failed to load model: {e}. Fallback failed: {fallback_error}")
-
 # === FEATURE SCHEMA LOADING ===
-# CRITICAL: Load the exact feature column order used during training
-# This ensures the model receives features in the expected order
+# Load the exact feature columns used during training
+
 try:
-    feature_file = os.path.join(MODEL_DIR, "feature_columns.txt")
-    with open(feature_file) as f:
-        FEATURE_COLS = [ln.strip() for ln in f if ln.strip()]
-    print(f"✅ Loaded {len(FEATURE_COLS)} feature columns from training")
+   
+    artifact_dir = os.path.dirname(MODEL_DIR)
+
+    feature_file = os.path.join(
+        artifact_dir,
+        "feature_columns.txt"
+    )
+
+    print("MODEL_DIR:", MODEL_DIR)
+    print("ARTIFACT_DIR:", artifact_dir)
+    print("FEATURE_FILE:", feature_file)
+
+    if not os.path.exists(feature_file):
+        raise FileNotFoundError(
+            f"feature_columns.txt not found at {feature_file}"
+        )
+
+    with open(feature_file, "r") as f:
+        FEATURE_COLS = [
+            line.strip()
+            for line in f
+            if line.strip()
+        ]
+
+    print(f"✅ Loaded {len(FEATURE_COLS)} feature columns")
+
 except Exception as e:
     raise Exception(f"Failed to load feature columns: {e}")
 
