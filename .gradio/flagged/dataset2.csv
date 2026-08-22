@@ -1,0 +1,2 @@
+Gender,Senior Citizen,Partner,Dependents,Phone Service,Multiple Lines,Internet Service,Online Security,Online Backup,Device Protection,Tech Support,Streaming TV,Streaming Movies,Contract,Paperless Billing,Payment Method,Tenure (months),Monthly Charges,Total Charges,output,timestamp
+Male,23,Yes,Yes,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Month-to-month,Yes,Electronic check,36,12000,1200000,"{""prediction"": 0, ""churn"": false, ""churn_probability"": 0.34780722856521606}",2026-08-20 19:38:49.226548
