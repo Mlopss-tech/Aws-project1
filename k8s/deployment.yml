@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: aws-mlops-api
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: aws-mlops-api
+
+  template:
+    metadata:
+      labels:
+        app: aws-mlops-api
+
+    spec:
+      imagePullSecrets:
+        - name: ecr-secret
+
+      containers:
+        - name: aws-mlops-api
+
+          image: 272694330758.dkr.ecr.eu-north-1.amazonaws.com/aws-mlops:latest
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 8000

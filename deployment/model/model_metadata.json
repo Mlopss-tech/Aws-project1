@@ -1,0 +1,11 @@
+{
+    "model_name": "telco-churn-model",
+    "run_id": "2787b065a09c4d268e7b09ea43bc035b",
+    "roc_auc": 0.837146400062001,
+    "precision": 0.4968051118210863,
+    "recall": 0.8315508021390374,
+    "f1": 0.622,
+    "quality_threshold": 0.8,
+    "quality_gate": "PASSED",
+    "s3_model_path": "s3://telco-mlops-yourname-2026/models/telco-churn-model/run-2787b065a09c4d268e7b09ea43bc035b/"
+}

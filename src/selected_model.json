@@ -1,0 +1,7 @@
+{
+    "version": 5,
+    "run_id": "4322f4ce28774b60becb2d20f4737bce",
+    "roc_auc": 0.837146400062001,
+    "model_name": "telco-churn-model",
+    "s3_path": "s3://telco-mlops-yourname-2026/models/telco-churn-model/run-4322f4ce28774b60becb2d20f4737bce/"
+}
